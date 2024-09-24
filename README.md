@@ -1,33 +1,20 @@
-# BertGCN
-This repo contains code for [BertGCN: Transductive Text Classification by Combining GCN and BERT](https://arxiv.org/abs/2105.05727).
+# Zhuang_Bert-BiLSTM-GCN
+This repo contains code for 基于预训练多网络融合的低资源壮文文本分类.
 
 
 ## Optimization
-- [ x ] 采用微博数据集，清洗成数据预处理格式
-- [ x ] 实现hfl/chinese-roberta-wwm-ext 模型与GCN模型的融合
+- [ x ] 采用
+- [ x ] 实现AIMyang/zhuang_bert_mlm 模型，Bi-LSTM和GCN模型的融合
 - [ x ] 参数调优，进行训练
 
 ## Reference
 
 [*BertGCN*]](https://github.com/ZeroRin/BertGCN)
-[*BERT-wwm*] (https://github.com/ymcui/Chinese-BERT-wwm)
+[*zhuang_bert-Bi-LSTM-GCN*] ([https://github.com/ymcui/Chinese-BERT-wwm](https://huggingface.co/AIMyang/zhuang_bert_mlm))
 
 
 ## Introduction
 
-In this work, we propose BertGCN, a model that combines large scale pretraining and transductive learning for text classification. BertGCN constructs a  heterogeneous graph over the dataset and represents documents as nodes using BERT representations. By jointly training the BERT and GCN modules within BertGCN, the proposed model is able to leverage the advantages of both worlds: large-scale pretraining which takes the advantage of the massive amount of raw data and transductive learning which jointly learns representations for both training data and unlabeled test data by propagating label influence through graph convolution. Experiments show that BertGCN achieves SOTA performances on a wide range of text classification datasets. 
-
-## Main Results
-|**Model** | **20NG** | **R8** | **R52** | **Ohsumed** | **MR** |
-| ------------ | ---- | ---- | ---- | ---- | ---- |
-| [*TextGCN*](https://arxiv.org/pdf/1809.05679.pdf) | 86.3 | 97.1 | 93.6 | 68.4 | 76.7 |
-| [*SGC*](https://arxiv.org/abs/1902.07153) | 88.5 | 97.2 | 94.0 | 68.5 | 75.9 |
-| [*BERT*](https://arxiv.org/abs/1810.04805) | 85.3 | 97.8 | 96.4 | 70.5 | 85.7 |
-| [*RoBERTa*](https://arxiv.org/abs/1907.11692) | 83.8 | 97.8 | 96.2 | 70.7 | 89.4 |
-| *BertGCN* | 89.3 | 98.1 | **96.6** | **72.8** | 86.0 |
-| *RoBERTaGCN* | **89.5** | **98.2** | 96.1 | **72.8** | **89.7**|
-| *BertGAT* | 87.4 | 97.8 | 96.5 | 71.2 | 86.5 |
-| *RoBERTaGAT* | 86.5 | 98.0 | 96.1 |  71.2 | 89.2 |
 
 ## Dependencies
 
@@ -56,14 +43,7 @@ Trained BertGCN parameters can be downloaded [here](https://drive.google.com/fil
 ## Acknowledgement
 
 The data preprocess and graph construction are from [TextGCN](https://github.com/yao8839836/text_gcn)
-
+The code are from [BertGCN: Transductive Text Classification by Combining GCN and BERT]
 ## Citation
-To appear in Findings of ACL 2021
-```angular2
-@article{lin2021bertgcn,
-  title={BertGCN: Transductive Text Classification by Combining GCN and BERT},
-  author={Lin, Yuxiao and Meng, Yuxian and Sun, Xiaofei and Han, Qinghong and Kuang, Kun and Li, Jiwei and Wu, Fei},
-  journal={arXiv preprint arXiv:2105.05727},
-  year={2021}
-}
+
 ```
